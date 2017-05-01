@@ -16,7 +16,6 @@ vector<vector<int> > file_input(string name){
 	string line;
 	vector<vector<int> >values;
 	
-	//real filename is "MSS_Problems.txt"
 	file.open(name);
 	
 	//Go through file and pull data
