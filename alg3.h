@@ -21,7 +21,7 @@ vector<int> changedp(vector<int> values, int number){
 	cout << "Step 2" << endl;
 	vector<vector<int> > totals(values.size(), vector<int>(number+1, 0));
 	cout << "Size: " << values.size() << endl;
-	for(size_t i=1; i<values.size()-1; i++){
+	for(size_t i=1; i<values.size(); i++){
 		for(int j=1; j<=number; j++){
 			cout << "j: " << j << " i: " << i << endl;
 			if(values[i-1] <= j){
