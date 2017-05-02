@@ -2,10 +2,9 @@
 #define ALG1
 
 #include <vector>
-#include <iostream>
 
 using namespace std;
-vector<int> greedy(vector<int> values, int number){
+vector<int> changegreedy(vector<int> values, int number){
 	int goal = number;
 	vector<int> totals(values.size(), 0);
 	int it = values.size()-1;

@@ -21,14 +21,14 @@ int main(int argc, char *argv[]){
 					return 0;
 			case 2:	//only run 2nd algorithm
 					for(size_t i=0; i < numbers.size(); i+=2)
-						temp = greedy(numbers[i], numbers[i+1][0]);
+						temp = changegreedy(numbers[i], numbers[i+1][0]);
 					return 0;
 			case 3:	//only run 3rd algorithm
+					for(size_t i=0; i < numbers.size(); i+=2)
+						temp = changedp(numbers[i], numbers[i+1][0]);
 					return 0;
 			default:	break;
 		}
-
-			
 			
 	return 0;
 }
