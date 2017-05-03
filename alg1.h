@@ -1,5 +1,5 @@
-#ifndef	ALG2
-#define AGL2
+#ifndef	ALG1
+#define ALG1
 
 #include <vector>
 #include <climits>
