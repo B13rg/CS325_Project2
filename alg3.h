@@ -22,12 +22,14 @@ vector<int> changedp(vector<int> values, int number){
 	vector<vector<int> > totals(values.size(), vector<int>(number+1, 0));
 	cout << "Size: " << values.size() << endl;
 	for(size_t i=1; i<values.size(); i++){
-		for(int j=1; j<=number; j++){
+		for(int j=1; j<=number-1; j++){
 			cout << "j: " << j << " i: " << i << endl;
 			if(values[i-1] <= j){
+				cout << "for" << endl;
 				holder[i][j] = holder[i-1][j] + holder[i][j-values[i-1]];
 				totals[i][j] += 1;
 			} else {
+				cout << "else" << endl;
 				holder[i][j] = holder[i-1][j];
 				totals[i][j] = holder[i-1][j];
 			}
