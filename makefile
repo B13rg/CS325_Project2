@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := debug
+.DEFAULT_GOAL := timer
 
 debug:
 	g++ -g -Wall -pedantic -ansi -std=c++11 -o change.sh ./main.cpp

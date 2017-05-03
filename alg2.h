@@ -10,7 +10,7 @@ vector<int> changegreedy(vector<int> values, int number){
 	int it = values.size()-1;
 	
 	while(goal > 0){
-		cout << goal << endl;
+		
 		if(values[it] <= goal){
 			goal -= values[it];
 			totals[it]++;
