@@ -51,13 +51,12 @@ void file_output(vector<int> input_coins, vector<int> output_coins, int type){
 	ofstream file ("Amountchange.txt", ios::app);
 	if(file.is_open()){
 		switch(type){
-			case 1:	file << "Brute Force"; break;
-			case 2: file << "Greedy Algorithm"; break;
-			case 3: file << "Dynamic Programming"; break;
-			default: file << "Coin calculation"; break;
+			case 1:	file << "Brute Force\n"; break;
+			case 2: file << "Greedy Algorithm\n"; break;
+			case 3: file << "Dynamic Programming\n"; break;
+			default: break;
 		}
 		//Add complete array to file
-		file << "\n";
 		for(size_t i=0; i < input_coins.size(); i++)
 			file << input_coins[i] << " ";
 		file << "\n";
@@ -67,6 +66,11 @@ void file_output(vector<int> input_coins, vector<int> output_coins, int type){
 				file << output_coins[i] << " ";
 			//file << '\n';
 		}
+		int sum =0;
+		for(auto n : output_coins)
+			sum += n;
+		file << sum;
+		file << "\n";
 		file.close();
 	}	
 }
