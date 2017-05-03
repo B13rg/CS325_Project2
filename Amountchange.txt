@@ -5,3 +5,9 @@ Greedy Algorithm
 Greedy Algorithm
 1 3 7 26 
 1 0 3 0 
+Dynamic Programming
+1 2 5 
+0 0 2 2
+Dynamic Programming
+1 3 7 26 
+1 0 3 0 4

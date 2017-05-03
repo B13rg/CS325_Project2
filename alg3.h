@@ -14,29 +14,28 @@ vector<int> changedp(vector<int> values, int number){
 	}
 
 	vector<vector<int> > holder(values.size(), vector<int>(number+1, 0));
-	cout << "Step 1" << endl;	
-	for(size_t n=0; n< values.size(); n++)
-		holder[n][0] = 1;
-		
-	cout << "Step 2" << endl;
-	vector<vector<int> > totals(values.size(), vector<int>(number+1, 0));
-	cout << "Size: " << values.size() << endl;
-	for(size_t i=1; i<values.size(); i++){
-		for(int j=1; j<=number-1; j++){
-			cout << "j: " << j << " i: " << i << endl;
-			if(values[i-1] <= j){
-				cout << "for" << endl;
-				holder[i][j] = holder[i-1][j] + holder[i][j-values[i-1]];
-				totals[i][j] += 1;
-			} else {
-				cout << "else" << endl;
-				holder[i][j] = holder[i-1][j];
-				totals[i][j] = holder[i-1][j];
-			}
-				
-		}
-	}
 	
-	return totals[values.size()];
+	vector<int> T(number+1, INT_MAX-1);
+	vector<int> R(number+1, -1);
+	
+	T[0] = 0;
+	
+	for(size_t j=0; j<values.size(); j++)
+		for(int i=1; i<= number; i++)
+			if(i >= values[j])
+				if(T[i-values[j]]+1 < T[i]){
+					T[i] = 1+T[i-values[j]];
+					R[i] = j;
+				}
+					
+	
+	vector<int> used(values.size(), 0);
+	int start = R.size()-1;
+	while(start != 0){
+		int j = R[start];
+		used[j]++;
+		start = start-values[j];
+	}
+	return used;
 }
 #endif

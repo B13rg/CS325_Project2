@@ -19,130 +19,147 @@ int main(){
 	vector<int> v2 = {1,5,10,25,50};
 	vector<int> v3 = {1,6,13,37,150};
 
+	
 	vector<int> a1 (50);
 	vector<int> a2 (200);
 	
-	for(int n : a1)
+	for(int n=0; n<50; n++)
 		a1[n] = n+1;
+
 	
-	for(int n : a2)
+	for(int n=0; n<200; n++)
 		a2[n] = n+2000;
 				
 	
 	//////////////////////////////////////////////////////alg1
-	cout << "Changeslow 50 v1" << endl;
+	cout << "Changeslow 50 v1," << endl;
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changeslow(v1, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v1 = {1,2,6,12,24,48,60};		
 	}
-	cout << "Changeslow 50 v2" << endl;
+	cout << "Changeslow 50 v2," << endl;
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changeslow(v2, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v2 = {1,5,10,25,50};		
 	}
-	cout << "Changeslow 50 v3" << endl;
+	cout << "Changeslow 50 v3," << endl;
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changeslow(v3, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v3 = {1,6,13,37,150};		
 	}
 	
 	
 	/////////////////////////////////////////////////////////alg2
 	//set of 50
-	cout << "Changegreedy 50 v1" << endl;
+	cout << "Changegreedy 50 v1," << endl;
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changegreedy(v1, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v1 = {1,2,6,12,24,48,60};		
 	}
-	cout << "Changegreedy 50 v2" << endl;
+	cout << "Changegreedy 50 v2," << endl;
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changegreedy(v2, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v2 = {1,5,10,25,50};		
 	}
-	cout << "Changegreedy 50 v3" << endl;	
+	cout << "Changegreedy 50 v3," << endl;	
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changegreedy(v3, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v3 = {1,6,13,37,150};		
 	}
 	//set of 2000+
-	cout << "Changegreedy 50 v1" << endl;
+	cout << "Changegreedy 50 v1," << endl;
 	for(size_t i=0; i<a2.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changegreedy(v1, a2[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;	
+		v1 = {1,2,6,12,24,48,60};	
 	}
-	cout << "Changegreedy 200 v2" << endl;
+	cout << "Changegreedy 200 v2," << endl;
 	for(size_t i=0; i<a2.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changegreedy(v2, a2[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;	
+		v2 = {1,5,10,25,50};	
 	}
-	cout << "Changegreedy 200 v3" << endl;
+	cout << "Changegreedy 200 v3," << endl;
 	for(size_t i=0; i<a2.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changegreedy(v3, a2[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v3 = {1,6,13,37,150};		
 	}
 
 
 	////////////////////////////////////////////////////////alg3
-	cout << "Changedp 50 v1" << endl;
+	cout << "Changedp 50 v1," << endl;
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changedp(v1, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;	
+		v1 = {1,2,6,12,24,48,60};	
 	}
-	cout << "Changedp 50 v2" << endl;
+	cout << "Changedp 50 v2," << endl;
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changedp(v2, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v2 = {1,5,10,25,50};		
 	}
-	cout << "Changedp 50 v3" << endl;	
+	cout << "Changedp 50 v3," << endl;	
 	for(size_t i=0; i<a1.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changedp(v3, a1[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v3 = {1,6,13,37,150};		
 	}
 
-	cout << "Changedp 200 v1" << endl;
+	cout << "Changedp 200 v1," << endl;
 	for(size_t i=0; i<a2.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changedp(v1, a2[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;
+		v1 = {1,2,6,12,24,48,60};		
 	}
-	cout << "Changedp 200 v2" << endl;
+	cout << "Changedp 200 v2," << endl;
 	for(size_t i=0; i<a2.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changedp(v2, a2[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;	
+		v2 = {1,5,10,25,50};	
 	}
-	cout << "Changedp 200 v3" << endl;
+	cout << "Changedp 200 v3," << endl;
 	for(size_t i=0; i<a2.size(); i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		changedp(v3, a2[i]);
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
-		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;		
+		cout << duration_cast<duration<double>>(finish-start).count() << "," << endl;	
+		v3 = {1,6,13,37,150};	
 	}
 	
 	cout << endl;
