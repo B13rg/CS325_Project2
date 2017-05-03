@@ -27,10 +27,12 @@ vector<vector<int> > file_input(string name){
 			stringstream stream(line);
 			
 			//For each element, push into temp vector
-			for(int i=0; stream; ++i){
+			for(int i=0; stream; i++){
 				stream >> n;
 				temp.push_back(n);	
 			}
+			
+			temp.pop_back();
 			//Push temp vector into true vector
 			values.push_back(temp);
 		}
@@ -45,7 +47,7 @@ vector<vector<int> > file_input(string name){
 //1: Brute Force
 //2: Greedy
 //3: Dynamic Programming
-void file_output(vector<int> input_coins, vector<vector<int> > output_coins, int type){
+void file_output(vector<int> input_coins, vector<int> output_coins, int type){
 	ofstream file ("Amountchange.txt", ios::app);
 	if(file.is_open()){
 		switch(type){
@@ -61,9 +63,9 @@ void file_output(vector<int> input_coins, vector<vector<int> > output_coins, int
 		file << "\n";
 		//Add sub array to file
 		for(size_t i=0; i < output_coins.size(); i++){
-			for(size_t k=0; k < output_coins[i].size(); i++)
-				file << output_coins[i][k] << " ";
-			file << '\n';
+			//for(size_t k=0; k < output_coins[i].size(); i++)
+				file << output_coins[i] << " ";
+			//file << '\n';
 		}
 		file.close();
 	}	
